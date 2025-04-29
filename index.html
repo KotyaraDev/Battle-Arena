@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Battle Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="margin:0; background:#000;">
+  <canvas id="unity-canvas" style="width:100vw; height:100vh;"></canvas>
+  <script>
+    const canvas = document.getElementById("unity-canvas");
+    const buildUrl = "Build";
+    const config = {
+      dataUrl: buildUrl + "/init.data",
+      frameworkUrl: buildUrl + "/init.framework.js",
+      codeUrl: buildUrl + "/init.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "KotyaraDev",
+      productName: "Battle Arena",
+      productVersion: "1.0.0",
+    };
+
+    const script = document.createElement("script");
+    script.src = buildUrl + "/init.loader.js";
+    script.onload = () => {
+      createUnityInstance(canvas, config).catch(alert);
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>
