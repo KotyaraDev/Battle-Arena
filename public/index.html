@@ -9,19 +9,17 @@
   <canvas id="unity-canvas" style="width:100vw; height:100vh;"></canvas>
   <script>
     const canvas = document.getElementById("unity-canvas");
-    const buildUrl = "https://battle-arena-ebon.vercel.app/Build";
     const config = {
-      dataUrl: buildUrl + "/init.data",
-      frameworkUrl: buildUrl + "/init.framework.js",
-      codeUrl: buildUrl + "/init.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      dataUrl: "/assets/data",
+      frameworkUrl: "/assets/framework",
+      codeUrl: "/assets/wasm",
       companyName: "KotyaraDev",
       productName: "Battle Arena",
       productVersion: "1.0.0",
     };
 
     const script = document.createElement("script");
-    script.src = buildUrl + "/init.loader.js";
+    script.src = "/assets/loader";
     script.onload = () => {
       createUnityInstance(canvas, config).catch(alert);
     };
