@@ -21,7 +21,7 @@
     };
 
     const script = document.createElement("script");
-    script.src = "/loader";
+    script.src = "/.proxy/loader";
     script.onload = () => {
       createUnityInstance(canvas, config).catch(alert);
     };
