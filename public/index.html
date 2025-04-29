@@ -10,16 +10,16 @@
   <script>
     const canvas = document.getElementById("unity-canvas");
     const config = {
-      dataUrl: "/assets/data",
-      frameworkUrl: "/assets/framework",
-      codeUrl: "/assets/wasm",
+      dataUrl: "/.proxy/assets/data",
+      frameworkUrl: "/.proxy/assets/framework",
+      codeUrl: "/.proxy/assets/wasm",
       companyName: "KotyaraDev",
       productName: "Battle Arena",
       productVersion: "1.0.0",
     };
 
     const script = document.createElement("script");
-    script.src = "/assets/loader";
+    script.src = "/.proxy/assets/loader";
     script.onload = () => {
       createUnityInstance(canvas, config).catch(alert);
     };
