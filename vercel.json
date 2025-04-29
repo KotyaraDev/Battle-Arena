@@ -1,0 +1,29 @@
+{
+    "rewrites": [
+        { "source": "/", "destination": "/index.html" }
+    ],
+    "headers": [
+        {
+            "source": "/Build/(.*)",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/wasm"
+                }
+            ]
+        },
+        {
+            "source": "/Build/(.*\\.js)",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/javascript"
+                }
+            ]
+        }
+    ]
+}
