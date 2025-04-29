@@ -21,7 +21,7 @@
     };
 
     const script = document.createElement("script");
-    script.src = buildUrl + "/loader";
+    script.src = "/loader";
     script.onload = () => {
       createUnityInstance(canvas, config).catch(alert);
     };
